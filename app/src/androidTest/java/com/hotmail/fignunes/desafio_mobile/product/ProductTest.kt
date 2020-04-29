@@ -1,9 +1,9 @@
 package com.hotmail.fignunes.desavio_mobile.presentation.movie
 
-import androidx.test.espresso.Espresso
-import androidx.test.espresso.action.ViewActions
-import androidx.test.espresso.assertion.ViewAssertions
-import androidx.test.espresso.matcher.ViewMatchers
+import androidx.test.espresso.Espresso.*
+import androidx.test.espresso.action.ViewActions.*
+import androidx.test.espresso.assertion.ViewAssertions.*
+import androidx.test.espresso.matcher.ViewMatchers.*
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.filters.LargeTest
 import androidx.test.rule.ActivityTestRule
@@ -19,16 +19,25 @@ class ProductTest {
 
     @Rule
     @JvmField
-    var activityTestRule = ActivityTestRule(ProductActivity::class.java, false, false)
+    var activityTestRule = ActivityTestRule(ProductActivity::class.java)
 
     @Test
     fun callProductDetail() {
-        Espresso.onView(ViewMatchers.withId(R.id.productRecyclerview)).perform(ViewActions.click())
+        onView(withId(R.id.productRecyclerview)).perform(click())
 
         Thread.sleep(2000)
 
         val getRemoveFromCart = activityTestRule.activity.getString(R.string.remove_from_cart)
-        Espresso.onView(ViewMatchers.withId(R.id.buttonRemoveFromCart))
-            .check(ViewAssertions.matches(ViewMatchers.withText(getRemoveFromCart)))
+        onView(withId(R.id.buttonRemoveFromCart))
+            .check(matches(withText(getRemoveFromCart)))
+    }
+
+    @Test
+    fun fieldsVisible() {
+        onView(withId(R.id.buttonCheckout)).check(matches(isDisplayed()))
+        onView(withId(R.id.productTotal)).check(matches(isDisplayed()))
+        onView(withId(R.id.productSubtotal)).check(matches(isDisplayed()))
+        onView(withId(R.id.productShipping)).check(matches(isDisplayed()))
+        onView(withId(R.id.productTax)).check(matches(isDisplayed()))
     }
 }

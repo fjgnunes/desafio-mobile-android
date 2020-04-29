@@ -3,8 +3,10 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 
+
 android {
     compileSdkVersion 29
+    buildToolsVersion "29.0.2"
     testOptions.unitTests.includeAndroidResources = true
 
     defaultConfig {
@@ -55,9 +57,10 @@ dependencies {
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
-    androidTestImplementation 'androidx.test:core:1.0.0'
-    androidTestImplementation 'androidx.test.ext:truth:1.0.0'
-    androidTestImplementation 'com.google.truth:truth:0.42'
+//    androidTestImplementation 'androidx.test:core:1.0.0'
+//    androidTestImplementation 'androidx.test.ext:truth:1.0.0'
+//    androidTestImplementation 'com.google.truth:truth:0.42'
+//
 
     //ViewPager Circle Indicator
     implementation 'de.hdodenhof:circleimageview:3.0.0'
@@ -101,22 +104,21 @@ dependencies {
     //Roboletric
     testImplementation "org.robolectric:robolectric:4.2"
 
-    //Android Testing Support Library's runner and rules
-    androidTestImplementation "androidx.test:rules:1.2.0-beta01"
-    androidTestImplementation "androidx.arch.core:core-testing:2.0.1"
+//    //Android Testing Support Library's runner and rules
+//    androidTestImplementation "androidx.test:rules:1.2.0-beta01"
+//    androidTestImplementation "androidx.arch.core:core-testing:2.0.1"
 
     //Espresso
-    androidTestImplementation "androidx.test.espresso:espresso-core:3.1.1"
     androidTestImplementation "androidx.test.espresso:espresso-contrib:3.1.1"
     androidTestImplementation "androidx.test.espresso:espresso-intents:3.1.1"
     androidTestImplementation 'com.android.support.test.espresso:espresso-idling-resource:3.2.0'
     implementation 'androidx.test.espresso:espresso-idling-resource:3.2.0'
-
-    //
-    androidTestImplementation 'androidx.test.espresso:espresso-accessibility:3.1.0'
-    androidTestImplementation 'androidx.test.espresso:espresso-web:3.1.0'
-    androidTestImplementation 'androidx.test.espresso.idling:idling-concurrent:3.1.0'
-
+//
+//    //
+//    androidTestImplementation 'androidx.test.espresso:espresso-accessibility:3.1.0'
+//    androidTestImplementation 'androidx.test.espresso:espresso-web:3.1.0'
+//    androidTestImplementation 'androidx.test.espresso.idling:idling-concurrent:3.1.0'
+//
 
     //Material design
     implementation 'com.google.android.material:material:1.0.0'
