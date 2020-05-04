@@ -1,6 +1,7 @@
-package com.hotmail.fignunes.desafio_mobile.presentation.movie.actions
+package com.hotmail.fignunes.desafio_mobile.presentation.product.actions
 
 import com.hotmail.fignunes.desafio_mobile.model.Product
+import com.hotmail.fignunes.desafio_mobile.presentation.movie.actions.ResponsesToProducts
 import com.hotmail.fignunes.desafio_mobile.repository.remote.product.responses.ProductResponses
 import org.junit.Assert
 import org.junit.Test

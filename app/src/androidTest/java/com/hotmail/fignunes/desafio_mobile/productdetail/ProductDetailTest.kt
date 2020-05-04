@@ -49,6 +49,8 @@ class ProductDetailTest {
     fun fieldsVisible() {
         Thread.sleep(2000)
 
+        onView(withText(activityTestRule.activity.getString(R.string.procuct_details))).check(matches(isDisplayed()))
+        onView(withId(R.id.productImage)).check(matches(isDisplayed()))
         onView(withId(R.id.buttonRemoveFromCart)).check(matches(isDisplayed()))
         onView(withId(R.id.productDetailName)).check(matches(isDisplayed()))
         onView(withId(R.id.productDetailPrice)).check(matches(isDisplayed()))
